@@ -1,128 +1,123 @@
-// Banco de dados simulado dos carros à venda
-const carros = [
+// Simulação de banco de dados de veículos populares e usados
+const veiculos = [
     {
         id: 1,
-        nome: "Porsche 911 Carrera",
-        preco: "R$ 820.000",
-        ano: "2022/2022",
-        km: "12.000 km",
-        cambio: "Automático PDK",
-        combustivel: "Gasolina",
-        imagem: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80"
+        modelo: "Chevrolet Onix 1.0 LT",
+        tipo: "carro",
+        ano: "2019 / 2019",
+        km: "45.000 km",
+        preco: "R$ 54.900",
+        imagem: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 2,
-        nome: "BMW M4 Competition",
-        preco: "R$ 650.000",
-        ano: "2023/2023",
-        km: "5.500 km",
-        cambio: "Automático",
-        combustivel: "Gasolina",
-        imagem: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=600&q=80"
+        modelo: "Honda Biz 125 Flex",
+        tipo: "moto",
+        ano: "2021 / 2021",
+        km: "12.000 km",
+        preco: "R$ 14.200",
+        imagem: "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 3,
-        nome: "Audi RS6 Avant",
-        preco: "R$ 790.000",
-        ano: "2021/2022",
-        km: "18.500 km",
-        cambio: "Automático Tiptronic",
-        combustivel: "Gasolina",
-        imagem: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80"
+        modelo: "Volkswagen Gol 1.6 MSI",
+        tipo: "carro",
+        ano: "2020 / 2021",
+        km: "58.000 km",
+        preco: "R$ 49.900",
+        imagem: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 4,
-        nome: "Mustang Mach 1",
-        preco: "R$ 490.000",
-        ano: "2022/2022",
-        km: "8.000 km",
-        cambio: "Automático",
-        combustivel: "Gasolina",
-        imagem: "https://images.unsplash.com/photo-1584345604482-14023737e937?auto=format&fit=crop&w=600&q=80"
+        modelo: "Honda CG 160 Titan",
+        tipo: "moto",
+        ano: "2022 / 2022",
+        km: "8.500 km",
+        preco: "R$ 16.800",
+        imagem: "https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=600&q=80"
     },
     {
         id: 5,
-        nome: "Mercedes-Benz C63 AMG",
-        preco: "R$ 520.000",
-        ano: "2021/2021",
+        modelo: "Fiat Uno 1.0 Way",
+        tipo: "carro",
+        ano: "2016 / 2017",
+        km: "82.000 km",
+        preco: "R$ 36.500",
+        imagem: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        id: 6,
+        modelo: "Yamaha Fazer 250 ABS",
+        tipo: "moto",
+        ano: "2020 / 2020",
         km: "22.000 km",
-        cambio: "Automático",
-        combustivel: "Gasolina",
-        imagem: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80"
+        preco: "R$ 19.400",
+        imagem: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80"
     }
 ];
 
-// Carregar os carros dinamicamente no HTML
-const gridCarros = document.getElementById('grid-carros');
+const vehiclesGrid = document.getElementById('vehiclesGrid');
+const searchInput = document.getElementById('searchInput');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
-function renderizarCarros() {
-    carros.forEach(carro => {
+// Função para exibir os veículos na tela
+function renderVeiculos(lista) {
+    vehiclesGrid.innerHTML = "";
+    
+    if(lista.length === 0) {
+        vehiclesGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">Nenhum veículo encontrado.</p>`;
+        return;
+    }
+
+    lista.forEach(veiculo => {
+        // Mensagem padrão para o botão de WhatsApp
+        const textoWhatsapp = encodeURIComponent(`Olá! Vi o anúncio do ${veiculo.modelo} (${veiculo.ano}) por ${veiculo.preco} no site e gostaria de mais informações.`);
+        const linkWhatsapp = `https://wa.me/5500999999999?text=${textoWhatsapp}`; // Substitua o número fictício aqui
+
         const card = document.createElement('div');
-        card.className = "bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between";
+        card.classList.add('card');
         card.innerHTML = `
-            <img src="${carro.imagem}" alt="${carro.nome}" class="w-full h-48 object-cover">
-            <div class="p-5 flex-grow">
-                <h3 class="text-xl font-bold mb-2">${carro.nome}</h3>
-                <p class="text-gray-500 text-sm mb-4"><i class="fa-solid fa-calendar-days mr-1"></i> Ano: ${carro.ano} | <i class="fa-solid fa-gauge-high mr-1"></i> ${carro.km}</p>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-2xl font-extrabold text-red-600">${carro.preco}</span>
-                </div>
-            </div>
-            <div class="px-5 pb-5">
-                <button onclick="abrirModal(${carro.id})" class="w-full bg-gray-900 hover:bg-gray-800 text-white text-center font-semibold py-2 px-4 rounded transition">
-                    Ver Detalhes
-                </button>
+            <img src="${veiculo.imagem}" alt="${veiculo.modelo}" class="card-img">
+            <div class="card-body">
+                <h4 class="card-title">${veiculo.modelo}</h4>
+                <p class="card-info">${veiculo.ano} • ${veiculo.km}</p>
+                <div class="card-price">${veiculo.preco}</div>
+                <a href="${linkWhatsapp}" target="_blank" class="btn-card">
+                    <i class="fa-brands fa-whatsapp"></i> Tenho Interesse
+                </a>
             </div>
         `;
-        gridCarros.appendChild(card);
+        vehiclesGrid.appendChild(card);
     });
 }
 
-// Controle do Modal
-let carroSelecionado = null;
+// Filtro de Busca por Digitação
+function filtrarVeiculos() {
+    const termoBusca = searchInput.value.toLowerCase();
+    const botaoAtivo = document.querySelector('.filter-btn.active').dataset.filter;
 
-function abrirModal(id) {
-    carroSelecionado = carros.find(c => c.id === id);
-    if (!carroSelecionado) return;
+    const veiculosFiltrados = veiculos.filter(veiculo => {
+        const matchesBusca = veiculo.modelo.toLowerCase().includes(termoBusca);
+        const matchesCategoria = botaoAtivo === 'todos' || veiculo.tipo === botaoAtivo;
+        return matchesBusca && matchesCategoria;
+    });
 
-    document.getElementById('modal-img').src = carroSelecionado.imagem;
-    document.getElementById('modal-nome').innerText = carroSelecionado.nome;
-    document.getElementById('modal-preco').innerText = carroSelecionado.preco;
-    document.getElementById('modal-ano').innerText = carroSelecionado.ano;
-    document.getElementById('modal-km').innerText = carroSelecionado.km;
-    document.getElementById('modal-cambio').innerText = carroSelecionado.cambio;
-    document.getElementById('modal-combustivel').innerText = carroSelecionado.combustivel;
-
-    document.getElementById('modal').classList.remove('hidden');
+    renderVeiculos(veiculosFiltrados);
 }
 
-function fecharModal() {
-    document.getElementById('modal').classList.add('hidden');
-}
+// Evento de clique nos botões de categoria (Todos, Carros, Motos)
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        filtrarVeiculos();
+    });
+});
 
-// Fechar modal ao clicar fora dele
-window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target === modal) {
-        fecharModal();
-    }
-}
+// Evento de digitação na busca
+searchInput.addEventListener('input', filtrarVeiculos);
 
-// Redirecionamento para o WhatsApp
-function interesseWpp() {
-    if (!carroSelecionado) return;
-    const telefone = "5511999999999"; // COLOQUE SEU TELEFONE AQUI (com DDD)
-    const texto = `Olá! Vi no site o veículo *${carroSelecionado.nome}* no valor de ${carroSelecionado.preco} e gostaria de receber mais informações.`;
-    const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
-}
-
-// Envio de formulário de contato falso (alerta simples)
-function enviarFormulario(event) {
-    event.preventDefault();
-    alert("Obrigado pelo contato! Nossa equipe responderá em breve.");
-    event.target.reset();
-}
-
-// Iniciar a renderização quando a página carregar
-document.addEventListener('DOMContentLoaded', renderizarCarros);
+// Inicializar a página carregando todos os veículos
+window.addEventListener('DOMContentLoaded', () => {
+    renderVeiculos(veiculos);
+});
