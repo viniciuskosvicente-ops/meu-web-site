@@ -3,73 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DriveX - Venda de Carros</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>AutoDrive | Carros e Motos Usados</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
+<body>
 
-    <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-wider text-red-500"><i class="fa-solid fa-car-side mr-2"></i>DRIVEX</a>
-            <div class="space-x-6">
-                <a href="#catalogo" class="hover:text-red-500 transition">Estoque</a>
-                <a href="#contato" class="hover:text-red-500 transition">Contato</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="bg-cover bg-center h-[60vh] flex items-center justify-center relative" style="background-image: url('https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative text-center text-white px-4">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Encontre o Carro dos Seus Sonhos</h1>
-            <p class="text-lg md:text-xl mb-6 text-gray-300">As melhores condições e os modelos mais exclusivos do mercado.</p>
-            <a href="#catalogo" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">Ver Estoque</a>
+    <header>
+        <div class="navbar container">
+            <a href="#" class="logo"><i class="fa-solid fa-car-side"></i> Auto<span>Drive</span></a>
+            <nav>
+                <a href="#catalogo" class="nav-link">Catálogo</a>
+                <a href="#sobre" class="nav-link">Sobre nós</a>
+                <a href="#contato" class="btn-contato">Fale Conosco</a>
+            </nav>
         </div>
     </header>
 
-    <main id="catalogo" class="max-w-7xl mx-auto px-4 py-16">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Nosso Estoque</h2>
-        
-        <div id="grid-carros" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="hero">
+        <div class="hero-content container">
+            <h2>Encontre seu próximo veículo popular</h2>
+            <p>Carros e motos seminovos com as melhores condições e financiamento facilitado.</p>
+            
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Digite a marca ou modelo do veículo...">
             </div>
-    </main>
-
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center hidden p-4">
-        <div class="bg-white rounded-lg max-w-2xl w-full overflow-hidden relative shadow-2xl">
-            <button onclick="fecharModal()" class="absolute top-4 right-4 text-gray-700 hover:text-red-600 text-2xl z-10">&times;</button>
-            <img id="modal-img" src="" alt="" class="w-full h-64 object-cover">
-            <div class="p-6">
-                <h3 id="modal-nome" class="text-2xl font-bold mb-2"></h3>
-                <p id="modal-preco" class="text-xl font-bold text-red-600 mb-4"></p>
-                <div class="grid grid-cols-2 gap-4 mb-6 text-sm text-gray-600">
-                    <div><i class="fa-solid fa-calendar mr-2"></i><strong>Ano:</strong> <span id="modal-ano"></span></div>
-                    <div><i class="fa-solid fa-gauge mr-2"></i><strong>Km:</strong> <span id="modal-km"></span></div>
-                    <div><i class="fa-solid fa-gears mr-2"></i><strong>Câmbio:</strong> <span id="modal-cambio"></span></div>
-                    <div><i class="fa-solid fa-gas-pump mr-2"></i><strong>Combustível:</strong> <span id="modal-combustivel"></span></div>
-                </div>
-                <button onclick="interesseWpp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded transition flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Tenho Interesse
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <section id="contato" class="bg-gray-900 text-white py-16">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Fale Conosco</h2>
-            <p class="text-gray-400 mb-8">Dúvidas sobre financiamento ou quer vender seu veículo? Envie uma mensagem!</p>
-            <form class="space-y-4 max-w-lg mx-auto" onsubmit="enviarFormulario(event)">
-                <input type="text" placeholder="Seu Nome" required class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-red-500">
-                <input type="email" placeholder="Seu E-mail" required class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-red-500">
-                <textarea placeholder="Sua Mensagem" rows="4" required class="w-full p-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-red-500"></textarea>
-                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition">Enviar Mensagem</button>
-            </form>
         </div>
     </section>
 
-    <footer class="bg-gray-950 text-gray-500 text-center py-6 border-t border-gray-800">
-        <p>&copy; 2026 DriveX Motores. Todos os direitos reservados.</p>
+    <main class="container" id="catalogo">
+        <div class="filter-headline">
+            <h3>Nossa Vitrine</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="carro">Carros</button>
+                <button class="filter-btn" data-filter="moto">Motos</button>
+            </div>
+        </div>
+
+        <div class="vehicles-grid" id="vehiclesGrid">
+            </div>
+    </main>
+
+    <footer>
+        <div class="footer-content container">
+            <p>&copy; 2026 AutoDrive Motores. Desenvolvido para portfólio no GitHub.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
