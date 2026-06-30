@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoDrive | Carros e Motos Usados</title>
+    <title>AutoDrive | Carros, Motos e Reboques Usados</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -28,7 +28,7 @@
     <header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20 px-4 text-center">
         <div class="max-w-3xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Seu próximo veículo popular está aqui</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8">Carros e motos revisados, com garantia e o melhor preço da região. Financiamento facilitado.</p>
+            <p class="text-lg md:text-xl text-gray-300 mb-8">Carros, motos e reboques revisados, com garantia e o melhor preço da região. Financiamento facilitado.</p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="#catalogo" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg">Ver Estoque</a>
                 <a href="https://wa.me/5541999072669" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg flex items-center gap-2">
@@ -41,10 +41,11 @@
     <section class="max-w-7xl mx-auto px-4 mt-8">
         <div class="bg-white p-4 rounded-xl shadow-sm flex flex-wrap gap-4 items-center justify-between">
             <h2 class="text-xl font-bold text-slate-800">Filtrar Categoria:</h2>
-            <div class="flex gap-2">
+            <div class="flex flex-wrap gap-2">
                 <button onclick="filtrar('todos')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Todos</button>
                 <button onclick="filtrar('carro')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Carros</button>
                 <button onclick="filtrar('moto')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Motos</button>
+                <button onclick="filtrar('reboque')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Reboques</button>
             </div>
         </div>
     </section>
@@ -89,7 +90,6 @@
     </footer>
 
     <script>
-        // Banco de dados fictício dos veículos populares com as novas adições
         const veiculos = [
             {
                 id: 1,
@@ -210,12 +210,21 @@
                 preco: 'R$ 44.900',
                 imagem: 'https://i.ytimg.com/vi/GsfcgchEChM/sddefault.jpg',
                 combustivel: 'Flex'
+            },
+            {
+                id: 13,
+                tipo: 'reboque',
+                nome: 'Carretinha Reboque Fazendinha',
+                ano: '2024/2024',
+                km: '0 km (Nova)',
+                preco: 'R$ 4.500',
+                imagem: 'https://images.tcdn.com.br/img/img_prod/739191/carreta_reboque_fazendinha_2_00x1_10_chapa_preta_961_1_cbbf139031ef19b5bfbfa1f67f08c387.jpg',
+                combustivel: 'Não se aplica'
             }
         ];
 
         const gridVeiculos = document.getElementById('grid-veiculos');
 
-        // Função para renderizar os cards na tela
         function renderizarVeiculos(lista) {
             gridVeiculos.innerHTML = '';
             lista.forEach(veiculo => {
@@ -247,7 +256,6 @@
             });
         }
 
-        // Função para filtrar por categoria (Carro/Moto/Todos)
         function filtrar(tipo) {
             if (tipo === 'todos') {
                 renderizarVeiculos(veiculos);
@@ -257,7 +265,6 @@
             }
         }
 
-        // Inicializa o site mostrando tudo
         renderizarVeiculos(veiculos);
     </script>
 </body>
