@@ -1,258 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoDrive | Carros, Motos e Reboques Usados</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+<nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+<div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-bold text-orange-500 flex items-center gap-2">
+<i class="fa-solid fa-car-side"></i> KV Veículos
+</a>
+<div class="space-x-6 hidden md:flex">
+<a href="#catalogo" class="hover:text-orange-500 transition">Estoque</a>
+<a href="#sobre" class="hover:text-orange-500 transition">Sobre Nós</a>
+<a href="#contato" class="hover:text-orange-500 transition">Contato</a>
+</div>
+<a href="#contato" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition text-sm">
+Fale Conosco
+</a>
+</div>
+</nav>
+
+<header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20 px-4 text-center">
+<div class="max-w-3xl mx-auto">
+<h1 class="text-4xl md:text-6xl font-extrabold mb-4">Seu próximo veículo popular está aqui</h1>
+<p class="text-lg md:text-xl text-gray-300 mb-8">Carros, motos e reboques revisados, com garantia e o melhor preço da região. Financiamento facilitado.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="#catalogo" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg">Ver Estoque</a>
+<a href="https://wa.me/5541999072669" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg flex items-center gap-2">
+<i class="fa-brands fa-whatsapp"></i> Simular Financiamento
+</a>
+</div>
+</div>
+</header>
+
+<section class="max-w-7xl mx-auto px-4 mt-8">
+<div class="bg-white p-4 rounded-xl shadow-sm flex flex-wrap gap-4 items-center justify-between">
+<h2 class="text-xl font-bold text-slate-800">Filtrar Categoria:</h2>
+<div class="flex flex-wrap gap-2">
+<button onclick="filtrar('todos')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Todos</button>
+<button onclick="filtrar('carro')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Carros</button>
+<button onclick="filtrar('moto')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Motos</button>
+<button onclick="filtrar('reboque')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Reboques</button>
+</div>
+</div>
+</section>
+
+<main id="catalogo" class="max-w-7xl mx-auto px-4 py-12">
+<div id="grid-veiculos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+</div>
+</main>
+
+<section id="sobre" class="bg-slate-100 py-16 px-4">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl font-bold text-slate-900 mb-4">Sobre a AutoDrive</h2>
+<p class="text-gray-600 leading-relaxed mb-6">Estamos no mercado há mais de 10 anos realizando sonhos. Nossa missão é oferecer carros e motos seminovos de extrema qualidade, procedência garantida e preços que cabem no bolso do trabalhador brasileiro.</p>
+<div class="grid grid-cols-3 gap-4 font-bold text-orange-500 text-lg">
+<div><p class="text-3xl font-black text-slate-800">100%</p><p class="text-sm text-gray-500">Revisados</p></div>
+<div><p class="text-3xl font-black text-slate-800">+2k</p><p class="text-sm text-gray-500">Clientes Felizes</p></div>
+<div><p class="text-3xl font-black text-slate-800">1 Ano</p><p class="text-sm text-gray-500">De Garantia</p></div>
+</div>
+</div>
+</section>
+
+<footer id="contato" class="bg-slate-900 text-white pt-12 pb-6 px-4">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+<div>
+<h3 class="text-xl font-bold text-orange-500 mb-4">AutoDrive</h3>
+<p class="text-gray-400">O lugar certo para comprar seu veículo popular com segurança.</p>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white mb-4">Contatos</h3>
+<p class="text-gray-400"><i class="fa-solid fa-phone text-orange-500 mr-2"></i> (41) 99907-2669</p>
+<p class="text-gray-400 mt-2"><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> contato@autodrive.com</p>
+<p class="text-gray-400 mt-2"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i> Av. Das Nações, 1500 - São Paulo/SP</p>
+</div>
+<div>
+<h3 class="text-xl font-bold text-white mb-4">Horário de Funcionamento</h3>
+<p class="text-gray-400">Segunda a Sexta: 08:00 às 18:00</p>
+<p class="text-gray-400 mt-2">Sábado: 08:00 às 13:00</p>
+</div>
+</div>
+<hr class="border-gray-800 my-6">
+<p class="text-center text-sm text-gray-500">&copy; 2026 AutoDrive. Criado para portfólio do GitHub.</p>
+</footer>
+
 <script>
-        const veiculos = [
-            {
-                id: 1,
-                tipo: 'carro',
-                nome: 'Chevrolet Onix 1.0 LT',
-                ano: '2019/2019',
-                km: '54.000 km',
-                preco: 'R$ 54.900',
-                imagem: 'https://image1.mobiauto.com.br/images/api/images/v1.0/41862642/transform/fl_progressive,f_webp,q_85,w_959',
-                combustivel: 'Flex'
-            },
-            {
-                id: 2,
-                tipo: 'moto',
-                nome: 'Honda CG 160 Titan',
-                ano: '2022/2022',
-                km: '12.000 km',
-                preco: 'R$ 16.500',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocZ-vdHIXa5o7DOkgFT3ImWseL3ZXiqizaQ&s',
-                combustivel: 'Flex'
-            },
-            {
-                id: 3,
-                tipo: 'carro',
-                nome: 'Volkswagen Gol 1.0 MPI',
-                ano: '2020/2021',
-                km: '48.500 km',
-                preco: 'R$ 49.900',
-                imagem: 'https://img2.icarros.com/dbimg/galeriaimgmodelo/2/133172_1.jpg',
-                combustivel: 'Flex'
-            },
-            {
-                id: 4,
-                tipo: 'moto',
-                nome: 'Yamaha Fazer FZ25',
-                ano: '2021/2021',
-                km: '18.000 km',
-                preco: 'R$ 21.400',
-                imagem: 'https://i.ytimg.com/vi/W_xjHxXcv_E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBO5lDsjRgaLM8v27gt3HHz5WFc7g',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 5,
-                tipo: 'carro',
-                nome: 'Fiat Uno Way 1.0',
-                ano: '2016/2017',
-                km: '78.000 km',
-                preco: 'R$ 36.800',
-                imagem: 'https://quatrorodas.abril.com.br/wp-content/uploads/2016/11/57dad6d50e2163027001a272fiat-uno-way-2017.jpeg?crop=1&resize=1212,909',
-                combustivel: 'Flex'
-            },
-            {
-                id: 6,
-                tipo: 'moto',
-                nome: 'Honda Biz 125 Flex',
-                ano: '2023/2023',
-                km: '4.200 km',
-                preco: 'R$ 15.900',
-                imagem: 'https://i.ytimg.com/vi/d-xtWsOzjPc/maxresdefault.jpg',
-                combustivel: 'Flex'
-            },
-            {
-                id: 7,
-                tipo: 'carro',
-                nome: 'Volkswagen Fusca 2.0 TSI',
-                ano: '2012/2013',
-                km: '65.000 km',
-                preco: 'R$ 120.000',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCiT3sJGR6QD184xkUG8Zt9InN2XT-PHZ7gzPt5MSbUA&s=10',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 8,
-                tipo: 'carro',
-                nome: 'Volkswagen Tera TSI',
-                ano: '2026/2026',
-                km: '2.474 km',
-                preco: 'R$ 155.000',
-                imagem: 'https://cdn.motor1.com/images/mgl/Ak4Rv6/s3/volkswagen-tera---lancamento.webp',
-                combustivel: 'Flex'
-            },
-            {
-                id: 9,
-                tipo: 'moto',
-                nome: 'Honda NX4 Falcon 400',
-                ano: '2008/2008',
-                km: '62.000 km',
-                preco: 'R$ 14.800',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEk3Kw6rcRryyROvlutlazL09ceG8nxlEtow&s',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 10,
-                tipo: 'carro',
-                nome: 'Volkswagen Parati 1.6 Mi CL',
-                ano: '1997/1997',
-                km: '185.000 km',
-                preco: 'R$ 13.500',
-                imagem: 'https://i.ytimg.com/vi/9HYZ-90anZQ/sddefault.jpg',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 11,
-                tipo: 'carro',
-                nome: 'Chevrolet Celta 1.0 Life',
-                ano: '2010/2010',
-                km: '112.000 km',
-                preco: 'R$ 22.900',
-                imagem: 'https://www.tabelafipeconsulta.com.br/wp-content/uploads/2022/06/celta-2010-tabela-fipe.jpg',
-                combustivel: 'Flex'
-            },
-            {
-                id: 12,
-                tipo: 'carro',
-                nome: 'Fiat Strada Working 1.4',
-                ano: '2016/2016',
-                km: '94.000 km',
-                preco: 'R$ 44.900',
-                imagem: 'https://i.ytimg.com/vi/GsfcgchEChM/sddefault.jpg',
-                combustivel: 'Flex'
-            },
-            {
-                id: 13,
-                tipo: 'reboque',
-                nome: 'Carretinha Reboque',
-                ano: '2024/2024',
-                km: '0 km (Nova)',
-                preco: 'R$ 6.500',
-                imagem: 'https://multcarretas.com.br/wp-content/uploads/2024/01/4d662a31-f49c-4d4d-abf9-d395c9f967ab-Copia.jpg',
-                combustivel: 'Não se aplica'
-            },
-            {
-                id: 14,
-                tipo: 'moto',
-                nome: 'Honda CBX 250 Twister',
-                ano: '2008/2008',
-                km: '48.000 km',
-                preco: 'R$ 8.000',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4v9Qd6cFOMp1QLpyIwk2e8lMhLC30fEtDcYJixp6Eo_XWPhomQuGLly-m&s=10',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 15,
-                tipo: 'moto',
-                nome: 'Honda CG 125 Titan Ks',
-                ano: '2001/2001',
-                km: '89.000 km',
-                preco: 'R$ 3.400',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwf3kySpwM8rbaYPXXBJW7ToF43w6OE67q1_URz_h9JzbPNWndDmwo8cA&s=10',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 16,
-                tipo: 'moto',
-                nome: 'Honda Pop 110i',
-                ano: '2022/2022',
-                km: '8.500 km',
-                preco: 'R$ 12.900',
-                imagem: 'https://www.arautomotos.com.br/uploads/motosseminovas/ft03-07-2023_114859_fotoLatDireita.jpeg',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 17,
-                tipo: 'moto',
-                nome: 'Honda NXR 160 Bros ES',
-                ano: '2017/2017',
-                km: '298.000 km',
-                preco: 'R$ 13.000',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgb3MHgF2lwF36taXsN0wLloR4SPyLqy5Zmchj_Hd9zHYv5ssIpt4suCnG&s=10',
-                combustivel: 'Flex'
-            },
-            {
-                id: 18,
-                tipo: 'carro',
-                nome: 'GM Camaro SS 6.2 V8',
-                ano: '2015/2015',
-                km: '42.000 km',
-                preco: 'R$ 210.000',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHCv8YfZ43INPsdAVjAmv2D4SdkERG6JkLLnVeJlHrRlaK7-oYZyfzxo-D&s=10',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 19,
-                tipo: 'carro',
-                nome: 'Porsche 911 Carrera S',
-                ano: '2016/2016',
-                km: '28.000 km',
-                preco: 'R$ 680.000',
-                imagem: 'https://http2.mlstatic.com/D_NQ_NP_677917-MLB109939379808_042026-O.webp',
-                combustivel: 'Gasolina'
-            },
-            {
-                id: 20,
-                tipo: 'carro',
-                nome: 'Porsche Panamera E-Hybrid',
-                ano: '2022/2022',
-                km: '15.500 km',
-                preco: 'R$ 749.000',
-                imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqyVprwYi0dub-xatctUEM2z3chy-3DfU9h_5nhDD0Ejcniw_IbBFLbFg6&s=10',
-                combustivel: 'Híbrido/Gasolina'
-            },
-            {
-                id: 21,
-                tipo: 'reboque',
-                nome: 'Reboque Plataforma para Carros',
-                ano: '2008/2008',
-                km: 'Sem odômetro',
-                preco: 'R$ 11.500',
-                imagem: 'https://guedescarretas.com.br/wp-content/uploads/2020/12/16-1.jpg',
-                combustivel: 'Não se aplica'
-            }
-        ];
+const veiculos = [
+{
+id: 1,
+tipo: 'carro',
+nome: 'Chevrolet Onix 1.0 LT',
+ano: '2019/2019',
+km: '54.000 km',
+preco: 'R$ 54.900',
+imagem: 'https://image1.mobiauto.com.br/images/api/images/v1.0/41862642/transform/fl_progressive,f_webp,q_85,w_959',
+combustivel: 'Flex'
+},
+{
+id: 2,
+tipo: 'moto',
+nome: 'Honda CG 160 Titan',
+ano: '2022/2022',
+km: '12.000 km',
+preco: 'R$ 16.500',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQocZ-vdHIXa5o7DOkgFT3ImWseL3ZXiqizaQ&s',
+combustivel: 'Flex'
+},
+{
+id: 3,
+tipo: 'carro',
+nome: 'Volkswagen Gol 1.0 MPI',
+ano: '2020/2021',
+km: '48.500 km',
+preco: 'R$ 49.900',
+imagem: 'https://img2.icarros.com/dbimg/galeriaimgmodelo/2/133172_1.jpg',
+combustivel: 'Flex'
+},
+{
+id: 4,
+tipo: 'moto',
+nome: 'Yamaha Fazer FZ25',
+ano: '2021/2021',
+km: '18.000 km',
+preco: 'R$ 21.400',
+imagem: 'https://i.ytimg.com/vi/W_xjHxXcv_E/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBO5lDsjRgaLM8v27gt3HHz5WFc7g',
+combustivel: 'Gasolina'
+},
+{
+id: 5,
+tipo: 'carro',
+nome: 'Fiat Uno Way 1.0',
+ano: '2016/2017',
+km: '78.000 km',
+preco: 'R$ 36.800',
+imagem: 'https://quatrorodas.abril.com.br/wp-content/uploads/2016/11/57dad6d50e2163027001a272fiat-uno-way-2017.jpeg?crop=1&resize=1212,909',
+combustivel: 'Flex'
+},
+{
+id: 6,
+tipo: 'moto',
+nome: 'Honda Biz 125 Flex',
+ano: '2023/2023',
+km: '4.200 km',
+preco: 'R$ 15.900',
+imagem: 'https://i.ytimg.com/vi/d-xtWsOzjPc/maxresdefault.jpg',
+combustivel: 'Flex'
+},
+{
+id: 7,
+tipo: 'carro',
+nome: 'Volkswagen Fusca 2.0 TSI',
+ano: '2012/2013',
+km: '65.000 km',
+preco: 'R$ 120.000',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCiT3sJGR6QD184xkUG8Zt9InN2XT-PHZ7gzPt5MSbUA&s=10',
+combustivel: 'Gasolina'
+},
+{
+id: 8,
+tipo: 'carro',
+nome: 'Volkswagen Tera TSI',
+ano: '2026/2026',
+km: '2.474 km',
+preco: 'R$ 155.000',
+imagem: 'https://cdn.motor1.com/images/mgl/Ak4Rv6/s3/volkswagen-tera---lancamento.webp',
+combustivel: 'Flex'
+},
+{
+id: 9,
+tipo: 'moto',
+nome: 'Honda NX4 Falcon 400',
+ano: '2008/2008',
+km: '62.000 km',
+preco: 'R$ 14.800',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEk3Kw6rcRryyROvlutlazL09ceG8nxlEtow&s',
+combustivel: 'Gasolina'
+},
+{
+id: 10,
+tipo: 'carro',
+nome: 'Volkswagen Parati 1.6 Mi CL',
+ano: '1997/1997',
+km: '185.000 km',
+preco: 'R$ 13.500',
+imagem: 'https://i.ytimg.com/vi/9HYZ-90anZQ/sddefault.jpg',
+combustivel: 'Gasolina'
+},
+{
+id: 11,
+tipo: 'carro',
+nome: 'Chevrolet Celta 1.0 Life',
+ano: '2010/2010',
+km: '112.000 km',
+preco: 'R$ 22.900',
+imagem: 'https://www.tabelafipeconsulta.com.br/wp-content/uploads/2022/06/celta-2010-tabela-fipe.jpg',
+combustivel: 'Flex'
+},
+{
+id: 12,
+tipo: 'carro',
+nome: 'Fiat Strada Working 1.4',
+ano: '2016/2016',
+km: '94.000 km',
+preco: 'R$ 44.900',
+imagem: 'https://i.ytimg.com/vi/GsfcgchEChM/sddefault.jpg',
+combustivel: 'Flex'
+},
+{
+id: 13,
+tipo: 'reboque',
+nome: 'Carretinha Reboque Padrão',
+ano: '2024/2024',
+km: '0 km (Nova)',
+preco: 'R$ 6.500',
+imagem: 'https://multcarretas.com.br/wp-content/uploads/2024/01/4d662a31-f49c-4d4d-abf9-d395c9f967ab-Copia.jpg',
+combustivel: 'Não se aplica'
+},
+{
+id: 14,
+tipo: 'moto',
+nome: 'Honda CBX 250 Twister',
+ano: '2008/2008',
+km: '48.000 km',
+preco: 'R$ 8.000',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4v9Qd6cFOMp1QLpyIwk2e8lMhLC30fEtDcYJixp6Eo_XWPhomQuGLly-m&s=10',
+combustivel: 'Gasolina'
+},
+{
+id: 15,
+tipo: 'moto',
+nome: 'Honda CG 125 Titan Ks',
+ano: '2001/2001',
+km: '89.000 km',
+preco: 'R$ 3.400',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwf3kySpwM8rbaYPXXBJW7ToF43w6OE67q1_URz_h9JzbPNWndDmwo8cA&s=10',
+combustivel: 'Gasolina'
+},
+{
+id: 16,
+tipo: 'moto',
+nome: 'Honda Pop 110i',
+ano: '2022/2022',
+km: '8.500 km',
+preco: 'R$ 12.900',
+imagem: 'https://www.arautomotos.com.br/uploads/motosseminovas/ft03-07-2023_114859_fotoLatDireita.jpeg',
+combustivel: 'Gasolina'
+},
+{
+id: 17,
+tipo: 'moto',
+nome: 'Honda NXR 160 Bros ES',
+ano: '2017/2017',
+km: '298.000 km',
+preco: 'R$ 13.000',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgb3MHgF2lwF36taXsN0wLloR4SPyLqy5Zmchj_Hd9zHYv5ssIpt4suCnG&s=10',
+combustivel: 'Flex'
+},
+{
+id: 18,
+tipo: 'carro',
+nome: 'GM Camaro SS 6.2 V8',
+ano: '2015/2015',
+km: '42.000 km',
+preco: 'R$ 210.000',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHCv8YfZ43INPsdAVjAmv2D4SdkERG6JkLLnVeJlHrRlaK7-oYZyfzxo-D&s=10',
+combustivel: 'Gasolina'
+},
+{
+id: 19,
+tipo: 'carro',
+nome: 'Porsche 911 Carrera S',
+ano: '2016/2016',
+km: '28.000 km',
+preco: 'R$ 680.000',
+imagem: 'https://http2.mlstatic.com/D_NQ_NP_677917-MLB109939379808_042026-O.webp',
+combustivel: 'Gasolina'
+},
+{
+id: 20,
+tipo: 'carro',
+nome: 'Porsche Panamera E-Hybrid',
+ano: '2022/2022',
+km: '15.500 km',
+preco: 'R$ 749.000',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqyVprwYi0dub-xatctUEM2z3chy-3DfU9h_5nhDD0Ejcniw_IbBFLbFg6&s=10',
+combustivel: 'Híbrido/Gasolina'
+},
+{
+id: 21,
+tipo: 'reboque',
+nome: 'Carretinha Reboque Asa Delta',
+ano: '2008/2008',
+km: 'Sem odômetro',
+preco: 'R$ 4.800',
+imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR07nO6M0NqYJ8l9mO8b_AorZgXpT5hE5U95w&s',
+combustivel: 'Não se aplica'
+}
+];
 
-        const gridVeiculos = document.getElementById('grid-veiculos');
+const gridVeiculos = document.getElementById('grid-veiculos');
 
-        function renderizarVeiculos(lista) {
-            gridVeiculos.innerHTML = '';
-            lista.forEach(veiculo => {
-                const card = `
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition flex flex-col justify-between">
-                        <img src="${veiculo.imagem}" alt="${veiculo.nome}" class="w-full h-48 object-cover">
-                        <div class="p-5 flex-grow">
-                            <span class="text-xs font-bold uppercase tracking-wider text-orange-500 bg-orange-50 px-2 py-1 rounded">
-                                ${veiculo.tipo}
-                            </span>
-                            <h3 class="text-xl font-bold mt-2 text-slate-800">${veiculo.nome}</h3>
-                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                <span><i class="fa-solid fa-calendar"></i> ${veiculo.ano}</span>
-                                <span><i class="fa-solid fa-gauge"></i> ${veiculo.km}</span>
-                                <span><i class="fa-solid fa-gas-pump"></i> ${veiculo.combustivel}</span>
-                            </div>
-                        </div>
-                        <div class="p-5 pt-0 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
-                            <span class="text-2xl font-black text-slate-900">${veiculo.preco}</span>
-                            <a href="https://wa.me/5541999072669?text=Olá,%20tenho%20interesse%20no%20${encodeURIComponent(veiculo.nome)}" 
-                               target="_blank" 
-                               class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold flex items-center gap-1 transition">
-                                <i class="fa-brands fa-whatsapp"></i> Comprar
-                            </a>
-                        </div>
-                    </div>
-                `;
-                gridVeiculos.innerHTML += card;
-            });
-        }
+function renderizarVeiculos(lista) {
+gridVeiculos.innerHTML = '';
+lista.forEach(veiculo => {
+const card = `
+<div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition flex flex-col justify-between">
+<img src="${veiculo.imagem}" alt="${veiculo.nome}" class="w-full h-48 object-cover">
+<div class="p-5 flex-grow">
+<span class="text-xs font-bold uppercase tracking-wider text-orange-500 bg-orange-50 px-2 py-1 rounded">
+${veiculo.tipo}
+</span>
+<h3 class="text-xl font-bold mt-2 text-slate-800">${veiculo.nome}</h3>
+<div class="flex justify-between text-sm text-gray-500 mt-3">
+<span><i class="fa-solid fa-calendar"></i> ${veiculo.ano}</span>
+<span><i class="fa-solid fa-gauge"></i> ${veiculo.km}</span>
+<span><i class="fa-solid fa-gas-pump"></i> ${veiculo.combustivel}</span>
+</div>
+</div>
+<div class="p-5 pt-0 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+<span class="text-2xl font-black text-slate-900">${veiculo.preco}</span>
+<a href="https://wa.me/5541999072669?text=Olá,%20tenho%20interesse%20no%20${encodeURIComponent(veiculo.nome)}"
+target="_blank"
+class="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-semibold flex items-center gap-1 transition">
+<i class="fa-brands fa-whatsapp"></i> Comprar
+</a>
+</div>
+</div>
+`;
+gridVeiculos.innerHTML += card;
+});
+}
 
-        function filtrar(tipo) {
-            if (tipo === 'todos') {
-                renderizarVeiculos(veiculos);
-            } else {
-                const filtrados = veiculos.filter(v => v.tipo === tipo);
-                renderizarVeiculos(filtrados);
-            }
-        }
+function filtrar(tipo) {
+if (tipo === 'todos') {
+renderizarVeiculos(veiculos);
+} else {
+const filtrados = veiculos.filter(v => v.tipo === tipo);
+renderizarVeiculos(filtrados);
+}
+}
 
-        renderizarVeiculos(veiculos);
-    </script>
+renderizarVeiculos(veiculos);
+</script>
+</body>
+</html>
