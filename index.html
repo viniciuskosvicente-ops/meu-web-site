@@ -1,95 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoDrive | Carros, Motos e Reboques Usados</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50 font-sans text-gray-800">
-
-    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-orange-500 flex items-center gap-2">
-                <i class="fa-solid fa-car-side"></i> KV Veículos
-            </a>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#catalogo" class="hover:text-orange-500 transition">Estoque</a>
-                <a href="#sobre" class="hover:text-orange-500 transition">Sobre Nós</a>
-                <a href="#contato" class="hover:text-orange-500 transition">Contato</a>
-            </div>
-            <a href="#contato" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition text-sm">
-                Fale Conosco
-            </a>
-        </div>
-    </nav>
-
-    <header class="bg-gradient-to-r from-slate-900 to-slate-800 text-white py-20 px-4 text-center">
-        <div class="max-w-3xl mx-auto">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Seu próximo veículo popular está aqui</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8">Carros, motos e reboques revisados, com garantia e o melhor preço da região. Financiamento facilitado.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#catalogo" class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg">Ver Estoque</a>
-                <a href="https://wa.me/5541999072669" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-lg font-bold text-lg transition shadow-lg flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> Simular Financiamento
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section class="max-w-7xl mx-auto px-4 mt-8">
-        <div class="bg-white p-4 rounded-xl shadow-sm flex flex-wrap gap-4 items-center justify-between">
-            <h2 class="text-xl font-bold text-slate-800">Filtrar Categoria:</h2>
-            <div class="flex flex-wrap gap-2">
-                <button onclick="filtrar('todos')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Todos</button>
-                <button onclick="filtrar('carro')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Carros</button>
-                <button onclick="filtrar('moto')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Motos</button>
-                <button onclick="filtrar('reboque')" class="bg-slate-200 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-lg font-medium transition cursor-pointer">Reboques</button>
-            </div>
-        </div>
-    </section>
-
-    <main id="catalogo" class="max-w-7xl mx-auto px-4 py-12">
-        <div id="grid-veiculos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        </div>
-    </main>
-
-    <section id="sobre" class="bg-slate-100 py-16 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Sobre a AutoDrive</h2>
-            <p class="text-gray-600 leading-relaxed mb-6">Estamos no mercado há mais de 10 anos realizando sonhos. Nossa missão é oferecer carros e motos seminovos de extrema qualidade, procedência garantida e preços que cabem no bolso do trabalhador brasileiro.</p>
-            <div class="grid grid-cols-3 gap-4 font-bold text-orange-500 text-lg">
-                <div><p class="text-3xl font-black text-slate-800">100%</p><p class="text-sm text-gray-500">Revisados</p></div>
-                <div><p class="text-3xl font-black text-slate-800">+2k</p><p class="text-sm text-gray-500">Clientes Felizes</p></div>
-                <div><p class="text-3xl font-black text-slate-800">1 Ano</p><p class="text-sm text-gray-500">De Garantia</p></div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contato" class="bg-slate-900 text-white pt-12 pb-6 px-4">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-                <h3 class="text-xl font-bold text-orange-500 mb-4">AutoDrive</h3>
-                <p class="text-gray-400">O lugar certo para comprar seu veículo popular com segurança.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white mb-4">Contatos</h3>
-                <p class="text-gray-400"><i class="fa-solid fa-phone text-orange-500 mr-2"></i> (41) 99907-2669</p>
-                <p class="text-gray-400 mt-2"><i class="fa-solid fa-envelope text-orange-500 mr-2"></i> contato@autodrive.com</p>
-                <p class="text-gray-400 mt-2"><i class="fa-solid fa-location-dot text-orange-500 mr-2"></i> Av. Das Nações, 1500 - São Paulo/SP</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-white mb-4">Horário de Funcionamento</h3>
-                <p class="text-gray-400">Segunda a Sexta: 08:00 às 18:00</p>
-                <p class="text-gray-400 mt-2">Sábado: 08:00 às 13:00</p>
-            </div>
-        </div>
-        <hr class="border-gray-800 my-6">
-        <p class="text-center text-sm text-gray-500">&copy; 2026 AutoDrive. Criado para portfólio do GitHub.</p>
-    </footer>
-
-    <script>
+<script>
         const veiculos = [
             {
                 id: 1,
@@ -290,6 +199,16 @@
                 preco: 'R$ 749.000',
                 imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqyVprwYi0dub-xatctUEM2z3chy-3DfU9h_5nhDD0Ejcniw_IbBFLbFg6&s=10',
                 combustivel: 'Híbrido/Gasolina'
+            },
+            {
+                id: 21,
+                tipo: 'reboque',
+                nome: 'Reboque Plataforma para Carros',
+                ano: '2008/2008',
+                km: 'Sem odômetro',
+                preco: 'R$ 11.500',
+                imagem: 'https://http2.mlstatic.com/D_NQ_NP_908354-MLB69614468641_052023-O.webp',
+                combustivel: 'Não se aplica'
             }
         ];
 
@@ -337,5 +256,3 @@
 
         renderizarVeiculos(veiculos);
     </script>
-</body>
-</html>
